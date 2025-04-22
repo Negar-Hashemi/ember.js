@@ -29,9 +29,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install    
-
-      - name: Install dependencies
         run: |
           npm install -g yarn@10.5.0
           yarn install
