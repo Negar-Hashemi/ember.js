@@ -33,7 +33,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install -g yarn@pnpm@10.5.0
+          npm install -g yarn@10.5.0
           yarn install
 
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
