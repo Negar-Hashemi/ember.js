@@ -28,18 +28,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Enable Corepack and set PNPM version
-        run: |
-          corepack enable
-          corepack prepare pnpm@10.5.0 --activate
-
       - name: Install dependencies
         run: npm install    
 
+      - name: Install dependencies
+        run: |
+          npm install -g yarn@pnpm@10.5.0
+          yarn install
 
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
         run: |
           echo "Run attempt: ${{ matrix.attempt }}"
-          npm test
+          yarn test
 
     continue-on-error: false
